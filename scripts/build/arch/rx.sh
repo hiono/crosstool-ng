@@ -1,0 +1,20 @@
+# Compute RX-specific values
+
+CT_DoArchTupleValues() {
+    # The architecture part of the tuple:
+    CT_TARGET_ARCH="${CT_ARCH}${target_endian_eb}"
+
+    # gcc ./configure flags
+    CT_ARCH_WITH_ARCH=
+    CT_ARCH_WITH_ABI=
+    CT_ARCH_WITH_CPU=
+    CT_ARCH_WITH_TUNE=
+    CT_ARCH_WITH_FPU=
+    CT_ARCH_WITH_FLOAT=
+    case "${CT_ARCH_ENDIAN}" in
+        big)
+	    CT_ARCH_ENDIAN_CFLAG=-mbig-endian-data;;
+        little)
+	    CT_ARCH_ENDIAN_CFLAG=-mlittle-endian-data;;
+    esac
+}
