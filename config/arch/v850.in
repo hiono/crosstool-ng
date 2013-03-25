@@ -1,0 +1,11 @@
+# RX specific configuration file
+## depends on EXPERIMENTAL
+## select ARCH_SUPPORTS_32
+## select ARCH_DEFAULT_32
+## select ARCH_DEFAULT_LE
+## select ARCH_SUPPORTS_WITH_ARCH
+## select ARCH_SUPPORTS_WITH_CPU
+## select ARCH_SUPPORTS_WITH_TUNE
+## select ARCH_SUPPORTS_WITH_FPU
+## select ARCH_SUPPORTS_WITH_FLOAT
+## help The V850 architecture
