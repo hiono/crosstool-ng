@@ -12,6 +12,7 @@ CT_DoKernelTupleValues() {
         case "${CT_ARCH}" in
             blackfin)   CT_TARGET_KERNEL="linux" ;;
             m68k)       CT_TARGET_KERNEL="uclinux" ;;
+            rx)         CT_TARGET_KERNEL="uclinux" ;;
             *)          CT_Abort "Unsupported no-mmu arch '${CT_ARCH}'"
         esac
     fi
