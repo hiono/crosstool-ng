@@ -14,11 +14,16 @@ do_binutils_get() {
     fi
 
     if [ -n "${CT_ARCH_BINFMT_FLAT}" ]; then
-        CT_GetCVS "elf2flt-${CT_ELF2FLT_VERSION}"               \
+        if [ "${CT_ELF2FLT_CUSTOM}" = "y" ]; then
+            CT_GetCustom "elf2flt" "${CT_ELF2FLT_VERSION}" \
+                "${CT_ELF2FLT_CUSTOM_LOCATION}"
+        else
+            CT_GetCVS "elf2flt-${CT_ELF2FLT_VERSION}"               \
                   ":pserver:anonymous@cvs.uclinux.org:/var/cvs" \
                   "elf2flt"                                     \
                   ""                                            \
                   "elf2flt-${CT_ELF2FLT_VERSION}"
+	fi
     fi
 }
 
